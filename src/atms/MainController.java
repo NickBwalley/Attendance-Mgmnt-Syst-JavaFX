@@ -1,35 +1,83 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package atms;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
-/**
- *
- * @author nickb
- */
-public class MainController implements Initializable {
+public class MainController {
+
+    @FXML
+    private TextField studentName;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private TextField studentID;
+
+    @FXML
+    private TextField studentEmail;
     
     @FXML
-    private Label label;
-    
+    private Button registerButton;
+
+
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    void getLoginPage(ActionEvent event) {
+        // Main m = new Main();
+        // m.changeScene(fxml: "Main.fxml");
+
+    }
+    //DATABASE CONNECTION
+    public static Connection dbConnect(){
+        
+        String url = "jdbc:mysql://localhost:3306/atms_javafx";
+        String username = "root";
+        String password = "";
+        
+        //load drivers
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+        }catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        
+        //database connection
+        try{
+            Connection conn = DriverManager.getConnection(url, username, password);
+            return conn;
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    @FXML
+    public void runMe(ActionEvent event) {
+//        System.out.println("This is just a dummy text!");
+//          Alert a = new Alert(Alert.AlertType.WARNING);
+//          a.setContentText("Invalid User Name or Password");
+//          a.show();
+//        Connection conn = dbConnect();
+//        Statement st = conn.createStatement();
+//        String query = "INSERT INTO users(username, user_id, email, role_id, password) VALUES('"+studentName+"', '"
+//                +studentID+"', '"+studentEmail+"', '"+1+"', '"+password+"')";
+//        st.executeUpdate(query);
+//        // System.out.println(name + " successfully registered!");
+//        conn.close();
+        System.out.println("We Are Legion!");
+        registerButton.setText("Stop Touching me!");
+    }
     
+    
+    
+
 }
