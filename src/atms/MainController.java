@@ -69,18 +69,23 @@ public class MainController {
     }
     
     @FXML
-    public void registerStudent(ActionEvent event) {
-//        System.out.println("This is just a dummy text!");
-          Alert a = new Alert(Alert.AlertType.WARNING);
-          a.setContentText("Invalid User Name or Password");
-          a.show();
-//        Connection conn = dbConnect();
-//        Statement st = conn.createStatement();
-//        String query = "INSERT INTO users(username, user_id, email, role_id, password) VALUES('"+studentName+"', '"
-//                +studentID+"', '"+studentEmail+"', '"+1+"', '"+password+"')";
-//        st.executeUpdate(query);
-//        // System.out.println(name + " successfully registered!");
-//        conn.close();
+    public void registerStudent(ActionEvent event) throws SQLException {
+        final String stdName1 = studentName.getText().toString();
+        final String stdID1 = studentID.getText().toString();
+        final String stdEmail1 = studentEmail.getText().toString();
+        final String stdPassword1 = password.getText().toString();
+        
+        Connection conn = dbConnect();
+        Statement st = conn.createStatement();
+        String query = "INSERT INTO users(username, user_id, email, role_id, password) VALUES('"+stdName1+"', '"
+                +stdID1+"', '"+stdEmail1+"', '"+1+"', '"+stdPassword1+"')";
+        st.executeUpdate(query);
+        // System.out.println(name + " successfully registered!");
+        conn.close();
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText(stdName1+ " successfully registered!");
+        a.show();
+        conn.close();
                 
     }
     

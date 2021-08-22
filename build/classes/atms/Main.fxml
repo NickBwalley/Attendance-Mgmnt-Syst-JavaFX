@@ -27,8 +27,6 @@
          <children>
             <TextField fx:id="studentName" layoutX="130.0" layoutY="140.0" promptText="Student Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
             <PasswordField fx:id="password" layoutX="130.0" layoutY="318.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
-            <TextField fx:id="studentID" layoutX="130.0" layoutY="199.0" promptText="Student ID" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
-            <TextField fx:id="studentEmail" layoutX="130.0" layoutY="256.0" promptText="Email Address" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
             <FontAwesomeIconView fill="#0598ff" glyphName="USER" layoutX="85.0" layoutY="159.0" size="20.0" />
             <FontAwesomeIconView fill="#0598ff" glyphName="USER" layoutX="85.0" layoutY="218.0" size="20.0" text="" />
             <FontAwesomeIconView fill="#0598ff" glyphName="ENVELOPE" layoutX="85.0" layoutY="275.0" size="20.0" />
@@ -41,6 +39,8 @@
                   <Font size="24.0" />
                </font>
             </Text>
+            <TextField fx:id="studentID" layoutX="132.0" layoutY="208.0" promptText="Student ID" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="studentEmail" layoutX="132.0" layoutY="265.0" promptText="Email Address" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
          </children>
       </AnchorPane>
    </center>
