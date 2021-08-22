@@ -33,7 +33,7 @@
             <FontAwesomeIconView fill="#0598ff" glyphName="USER" layoutX="85.0" layoutY="218.0" size="20.0" text="" />
             <FontAwesomeIconView fill="#0598ff" glyphName="ENVELOPE" layoutX="85.0" layoutY="275.0" size="20.0" />
             <FontAwesomeIconView fill="#0598ff" glyphName="KEY" layoutX="85.0" layoutY="337.0" size="20.0" />
-            <Button fx:id="registerButton" layoutX="129.0" layoutY="388.0" mnemonicParsing="false" onAction="#runMe" prefHeight="35.0" prefWidth="152.0" style="-fx-background-color: #0598ff;" text="REGISTER" />
+            <Button fx:id="registerButton" layoutX="129.0" layoutY="388.0" mnemonicParsing="false" onAction="#registerStudent" prefHeight="35.0" prefWidth="152.0" style="-fx-background-color: #0598ff;" text="REGISTER" />
             <Hyperlink layoutX="177.0" layoutY="449.0" onAction="#getLoginPage" text="Login?" />
             <FontAwesomeIconView fill="#0598ff" glyphName="USERS" layoutX="165.0" layoutY="50.0" size="35.0" text="" wrappingWidth="11.857142448425293" />
             <Text fill="#0598ff" layoutX="121.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ATMS Register">

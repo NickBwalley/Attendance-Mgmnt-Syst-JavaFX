@@ -1,15 +1,21 @@
 package atms;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MainController {
 
@@ -30,10 +36,12 @@ public class MainController {
 
 
     @FXML
-    void getLoginPage(ActionEvent event) {
-        // Main m = new Main();
-        // m.changeScene(fxml: "Main.fxml");
-
+    void getLoginPage(ActionEvent event) throws IOException {
+        Parent part = FXMLLoader.load(getClass().getResource("/atms/login/login.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(part);
+        stage.setScene(scene);
+        stage.show();
     }
     //DATABASE CONNECTION
     public static Connection dbConnect(){
@@ -61,11 +69,11 @@ public class MainController {
     }
     
     @FXML
-    public void runMe(ActionEvent event) {
+    public void registerStudent(ActionEvent event) {
 //        System.out.println("This is just a dummy text!");
-//          Alert a = new Alert(Alert.AlertType.WARNING);
-//          a.setContentText("Invalid User Name or Password");
-//          a.show();
+          Alert a = new Alert(Alert.AlertType.WARNING);
+          a.setContentText("Invalid User Name or Password");
+          a.show();
 //        Connection conn = dbConnect();
 //        Statement st = conn.createStatement();
 //        String query = "INSERT INTO users(username, user_id, email, role_id, password) VALUES('"+studentName+"', '"
@@ -73,8 +81,7 @@ public class MainController {
 //        st.executeUpdate(query);
 //        // System.out.println(name + " successfully registered!");
 //        conn.close();
-        System.out.println("We Are Legion!");
-        registerButton.setText("Stop Touching me!");
+                
     }
     
     
