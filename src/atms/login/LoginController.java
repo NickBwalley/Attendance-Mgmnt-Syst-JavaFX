@@ -54,20 +54,14 @@ public class LoginController {
           System.out.println(rs);
           // Students usersdashboard = new Students();
           if(rs.next()){                   
-//                    Alert al = new Alert(Alert.AlertType.CONFIRMATION);
-//                    al.setContentText("Successful Login");
-//                    al.show();
-                    //You can add the code to open HomePage (after successful login)
-                   
-                   // usersdashboard.start(usersdashboard.user_dashboard);
-//        Parent part = FXMLLoader.load(getClass().getResource("/atms/students/studentsDashboard.fxml"));
-//        Stage stage = new Stage();
-//        Scene scene = new Scene(part);
-//        stage.setScene(scene);
-//        stage.show();
-Alert a = new Alert(Alert.AlertType.INFORMATION);
-                    a.setContentText("You are successfully logged in!");
-                    a.show(); 
+        Parent part = FXMLLoader.load(getClass().getResource("/atms/students/StudentDashboard.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(part);
+        stage.setScene(scene);
+        stage.show();
+//Alert a = new Alert(Alert.AlertType.INFORMATION);
+//                    a.setContentText("You are successfully logged in!");
+//                    a.show(); 
                     
                 }else{
                     Alert a = new Alert(Alert.AlertType.WARNING);
